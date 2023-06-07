@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/movie_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:text="@string/movie_id"
+        android:textSize="19.8sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/movie_id_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:inputType="number"
+        android:textSize="19.8sp"
+        android:textColor="#837F7F"
+        android:fontFamily="@font/gentium_book_basic"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/load_button"
+        app:layout_constraintStart_toEndOf="@id/movie_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/load_button"
+        android:layout_width="120dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#A64949"
+        android:fontFamily="@font/gentium_book_basic"
+        android:visibility="visible"
+        android:text="@string/load"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movie_id_text"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_posters"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_id_text"
+        app:layout_constraintBottom_toTopOf="@id/movie_title_text"
+        tools:listitem="@layout/for_resycler_view_list" />
+
+    <TextView
+        android:id="@+id/movie_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:text="@string/title"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/movie_release_text"
+        app:layout_constraintEnd_toStartOf="@id/movie_title_value"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/movie_title_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:hint=""
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/movie_release_value"
+        app:layout_constraintStart_toEndOf="@id/movie_title_text" />
+
+    <TextView
+        android:id="@+id/movie_release_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:text="@string/release_date"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/movie_budget_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/movie_release_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:hint=""
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/movie_budget_value"
+        app:layout_constraintStart_toEndOf="@id/movie_release_text" />
+
+
+    <TextView
+        android:id="@+id/movie_budget_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="26dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:text="@string/budget"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/movie_budget_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="26dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:hint=""
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movie_budget_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
